@@ -1,0 +1,23 @@
+div.Content {
+    width: 70%;
+    border: 13px solid #bdc3c7;
+    margin: auto;
+}
+
+div {
+    margin: 15px;
+    font-family: Source Sans Pro;
+}
+
+p1.Date {
+    text-align: left;
+    color: #3498db;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 30px;
+    font-weight: bold;
+}
