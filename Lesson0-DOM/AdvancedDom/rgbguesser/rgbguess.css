@@ -1,0 +1,27 @@
+.square {
+    width: 30%;
+    background: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
+
+}
+body {
+    background-color: #232323;
+}
+
+#container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+span {
+    color: white;
+}
