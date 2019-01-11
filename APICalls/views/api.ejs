@@ -1,0 +1,7 @@
+<h1> Hello New Page </h1>
+
+<% for (var property in data) { %>
+    <% if (data.hasOwnProperty(property)) { %>
+        <li><%=property%> - <%=data[property] %></li> 
+    <% } %>
+<% }; %>

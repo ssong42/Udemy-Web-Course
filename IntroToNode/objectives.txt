@@ -1,0 +1,6 @@
+#Intro To Node
+
+*What is node?
+*Node is a javascript run time enviroment running on V8
+*Why are we using it?
+    *It's popular 
