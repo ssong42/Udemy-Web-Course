@@ -1,0 +1,15 @@
+<% include partials/header %>
+
+<% friends.forEach((friend) => { %>
+    <li><%= friend %></li>
+<% }); %>
+<br>
+<form action="/addfriend" method="POST"> 
+    First Name of Friend:<br>
+    <input type="text" name="newfriend" value="firstname">
+    <br><br>
+    <input type="submit" value="Submit">
+
+</form>
+
+<% include partials/footer %>
