@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Javascript Tutorial</title>
+</head>
+<body>
+    <script>
+        var vehicles = new Array("car", "truck", "motorcyle");
+        document.write("CHECK THIS OUT " + vehicles[0] + "<br />");
+
+        for (i in vehicles)
+        {
+            document.write("Value in array " + vehicles[i] + "<br />");
+        }
+
+        if (5 > 10)
+        {
+            document.write("5 is greater than 10 <br />");
+        }
+        else
+        {
+            document.write("5 is less than 10 <br />");
+        }
+
+        var count = 10;
+        
+        while (count < 20)
+        {
+            document.write(count + "<br />");
+            count++;
+        }
+
+        for (count = 1; count <= 10; count++)
+        {
+            document.write(count + " in for loop <br />");
+        }
+
+    </script>
+</body>
+</html>
