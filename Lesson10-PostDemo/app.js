@@ -22,6 +22,6 @@ app.post("/addfriend", (req, res) => {
     res.redirect("friends");
 })
 
-app.listen(process.env.PORT, process.env.IP, (req, res) => {
+app.listen(3002,(req, res) => {
     console.log("Listening Now...");
 });
