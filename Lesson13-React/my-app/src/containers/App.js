@@ -1,9 +1,24 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
-import Scroll from '../components/Scroll.js';
+import Scroll from '../components/Scroll';
+import ErrorBoundary from '../components/ErrorBoundary'
 import './App.css'
 
+import { setSearchField } from '../actions';
+
+const mapStateToProps = (state) => {
+    return {
+        searchField: state.searchField
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSearchChange: (event) => dispatch(setSearchField(event.target.value))
+    }
+}
 class App extends Component {
     constructor() {
         super()
@@ -11,7 +26,6 @@ class App extends Component {
             robots: [],
             searchField: '',
         }
-        console.log('1');
     }
 
     componentDidMount() {
@@ -23,14 +37,10 @@ class App extends Component {
         })
     }
 
-    onSearchChange = (event) => {
-        console.log(event.target.value);
-        this.setState({searchField: event.target.value})
-    }
-
     render () {
         // console.log('3');
-        let {robots, searchField} = this.state;
+        let {robots} = this.state;
+        const { searchField, onSearchChange } = this.props
         const filteredRobots = robots.filter(robot => {
             //grab only the robots with names that includes the search field
             return robot.name.toLowerCase().includes(searchField.toLowerCase());
@@ -38,12 +48,14 @@ class App extends Component {
         return (
             <div className="tc">
                 <h1 className="f1">RoboFriends</h1>
-                <SearchBox searchChange={this.onSearchChange}/>
+                <SearchBox searchChange={onSearchChange}/>
                 <Scroll>
-                    <CardList robots={filteredRobots}/>
+                    <ErrorBoundary>
+                        <CardList robots={filteredRobots}/>
+                    </ErrorBoundary>
                 </Scroll>
             </div>
         )
 }};
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
